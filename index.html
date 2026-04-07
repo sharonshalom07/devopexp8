@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Static Website</title>
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #06b6d4;
+      --bg: #f1f5f9;
+      --text: #111827;
+      --card: #ffffff;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --card: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: rgba(0,0,0,0.1);
+      padding: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--secondary);
+    }
+
+    .toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: white;
+      color: black;
+      border-radius: 20px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      background: #111;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="toggle" onclick="toggleDarkMode()">🌙 Dark</div>
+
+<header>
+  <h1>Modern Static Website</h1>
+  <p>Clean UI • Responsive • Static Hosting Ready</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+  <div class="grid">
+
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This is a modern static website UI.</p>
+      <button onclick="hello()">Click Me</button>
+    </div>
+
+    <div class="card" id="about">
+      <h2>About</h2>
+      <p>Built using only HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+      <p>Email: example@email.com</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 My Website</p>
+</footer>
+
+<script>
+  function hello() {
+    alert("Nice UI, right? 😎");
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+  }
+</script>
+
+</body>
+</html>
